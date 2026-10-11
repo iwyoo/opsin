@@ -335,7 +335,7 @@ does not define a CFG.
 	<regex name="%fusedRingSystem%" value = "((%simpleComponent%|%multipliedComponent%|%multipliedParent%)+(%ringGroup%|%preSuffixedRing%))"/>
 	<regex name="%ringGroupOrFusedRingSystem%" value = "(%ringGroup%|%fusedRingSystem%)"/>
 	<regex name="%phaneAmplificant%" value = "(%phaneLocants%(%multiplierNotGroup%?%ringBridge%*%ringGroupOrFusedRingSystem%%a%|%multiplier%%structuralOpenBracket%%ringBridge%*%ringGroupOrFusedRingSystem%%a%%structuralCloseBracket%)%hyphen%?)"/>
-	<regex name="%phaneSystem%" value = "(%phaneAmplificant%*%phaneSkeleton%)"/>
+	<regex name="%phaneSystem%" value = "(%phaneAmplificant%+%phaneSkeleton%)"/>
 	<regex name="%irregularRingSubstituentStem%" value="(%vonBaeyerSystemSubstituent%|%cycloChainSubstituent%|%spiroSystemSubstituent%|%cyclicUnsaturableHydrocarbon%%a%?)"/>
 	<regex name="%ringSubstituent%" value = "((%ringGroupOrFusedRingSystem%|%irregularRingSubstituentStem%)(%inlineEndings%|%conjunctiveSideChainInline%)|%phaneSystem%%inlineEndings%|%trivialRingSubstituentSub%|%fusedRingSystemFromTrivialRingSubstituent%|%cyclicCarbohydrateSubstituent%|%nucelosylSubstituent%)"/>
 
