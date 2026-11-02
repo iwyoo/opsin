@@ -128,6 +128,12 @@ public class NomenclatureIntegrationTest {
 	public void testOmittedSpaces(String name, String expectedInchi) {
 		checkName(name, expectedInchi);
 	}
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "superfluousSpaces.txt", delimiter='\t')
+	public void testSuperfluousSpaces(String name, String expectedInchi) {
+		checkName(name, expectedInchi);
+	}
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "functionalClasses.txt", delimiter='\t')
@@ -198,6 +204,12 @@ public class NomenclatureIntegrationTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "miscellany.txt", delimiter='\t')
 	public void testMiscellany(String name, String expectedInchi) {
+		checkName(name, expectedInchi);
+	}
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "indirectLocants.txt", delimiter='\t')
+	public void testIndirectLocants(String name, String expectedInchi) {
 		checkName(name, expectedInchi);
 	}
 	
