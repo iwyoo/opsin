@@ -1350,7 +1350,7 @@ class ComponentGenerator {
 	 */
 	private void processInfixes(Element subOrRoot) throws ComponentGenerationException {
 		for (Element el : subOrRoot.getChildElements()) {
-			if (el.getName().equals("acidSymbols") || el.getName().equals("acidWord")) {
+			if (el.getName().equals(ACIDSYMBOLS_EL) || el.getName().equals(ACIDWORD_EL)) {
 				orientPeroxoInfixUsingAcidSymbols(el);
 			}
 		}
@@ -1491,7 +1491,7 @@ class ComponentGenerator {
 		if (peroxo == null || suffix == null) {
 			throw new ComponentGenerationException("The word acid may only be separated from a peroxo suffix by a bracket");
 		}
-		if (acidSymbolsOrWord.getName().equals("acidSymbols")) {
+		if (acidSymbolsOrWord.getName().equals(ACIDSYMBOLS_EL)) {
 			String[] pairs = acidSymbolsOrWord.getValue().trim().replace("-acid", "").split(",");
 			for (String pair : pairs) {
 				if (!pair.equals(pairs[0])) {
